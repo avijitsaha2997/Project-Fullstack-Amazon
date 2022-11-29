@@ -16,16 +16,16 @@ function Home() {
         <div className="home__row">
           <Product
             id="8723749"
-            title="The core concept behind the Lean Startup approach is that a newly launched enterprise."
+            title="The PS5 is a powerful console offering a sublime current-gen gaming experience."
             price={29.99}
-            image="https://pictures.abebooks.com/isbn/9789043030984-us-300.jpg"
+            image="https://wallpapers.com/images/hd/white-ps5-collection-4dr2ngsgz2w9g1s1.jpg"
             rating={3}
           />
           <Product
             id="4592758"
-            title="Man’s Search for Meaning by Victor E. Fankl."
+            title="Xbox One S. This machine is so powerful. Next generation gaming with Xbox seires."
             price={29.99}
-            image="https://cdn.lifehack.org/wp-content/uploads/2019/07/mans-search-for-meaning.jpg"
+            image="https://compass-ssl.xbox.com/assets/08/7e/087efc15-7859-4641-afbc-bfddf11ba960.jpg?n=X1S-2020_Page-Hero-0_Upgrade_767x431.jpg"
             rating={4}
           />
         </div>
@@ -33,7 +33,7 @@ function Home() {
         <div className="home__row">
           <Product
             id="9056235"
-            title="ASUS TUF A17 2020 Version 17.3-inch FHD Gaming Laptop "
+            title="ASUS TUF A17 2020 Version 17.3-inch FHD Gaming Laptop."
             price={1099.99}
             image="https://asusrog.com.bd/wp-content/uploads/2020/06/3-1-1.jpg"
             rating={4}

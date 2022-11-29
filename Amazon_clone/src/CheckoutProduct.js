@@ -1,7 +1,17 @@
 import PropTypes from "prop-types";
 import React from "react";
 import "./CheckoutProduct.css";
+import { useStateValue } from "./StateProvider";
 function CheckoutProduct({ id, title, image, price, rating }) {
+  // eslint-disable-next-line no-unused-vars
+  const [{ basket }, dispatch] = useStateValue();
+
+  const removeFromBasket = () => {
+    dispatch({
+      type: "REMOVE_FROM_BASKET",
+      id
+    });
+  };
   return (
     <div className="checkoutProduct">
         <img className="checkoutProduct__image" src={image} alt="" />
@@ -13,10 +23,10 @@ function CheckoutProduct({ id, title, image, price, rating }) {
             </p>
             <div className="checkoutProduct__rating">
                 {Array(rating).fill().map(() => (
-                    <p key={Math.random}>⭐ </p>
+                    <p key={Math.random}>⭐</p>
                 ))}
             </div>
-            <button>Remove From Basket</button>
+            <button onClick={removeFromBasket}>Remove From Basket</button>
         </div>
     </div>
   );
