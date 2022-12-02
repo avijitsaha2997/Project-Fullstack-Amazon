@@ -4,17 +4,18 @@ import { auth } from "./firebase";
 import "./Login.css";
 
 function Login() {
-  const history = useNavigate();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const signIn = (e) => {
     e.preventDefault();
     auth
       .signInWithEmailAndPassword(email, password)
       .then(auth => {
-        history("/");
-      });
+        navigate("/");
+      })
+      .catch(error => alert(error));
   };
 
   const register = (e) => {
@@ -26,7 +27,7 @@ function Login() {
         // sucessfully created a new user
         console.log(auth);
         if (auth) {
-          history("/");
+          navigate("/");
         }
       })
       .catch(error => alert(error));

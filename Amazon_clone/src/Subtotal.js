@@ -1,9 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { getBasketTotal } from "./reducer";
 import { useStateValue } from "./StateProvider";
+
 import "./Subtotal.css";
 
 function Subtotal() {
+  const navigate = useNavigate();
+
   // eslint-disable-next-line no-unused-vars
   const [{ basket }, dispatch] = useStateValue();
   const totalPrice = getBasketTotal(basket);
@@ -19,7 +23,7 @@ function Subtotal() {
           <input type="checkbox" /> This order contains a gift
         </small>
 
-        <button>Proceed to checkout</button>
+        <button onClick={e => navigate("/payment")}>Proceed to checkout</button>
 
     </div>
   );

@@ -23,7 +23,7 @@ function CheckoutProduct({ id, title, image, price, rating }) {
             </p>
             <div className="checkoutProduct__rating">
                 {Array(rating).fill().map(() => (
-                    <p key={Math.random}>⭐</p>
+                    <p key={Math.random()}>⭐</p>
                 ))}
             </div>
             <button onClick={removeFromBasket}>Remove From Basket</button>
