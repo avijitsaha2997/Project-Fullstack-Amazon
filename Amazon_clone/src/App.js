@@ -1,3 +1,5 @@
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
@@ -6,7 +8,10 @@ import { auth } from "./firebase";
 import Header from "./Header";
 import Home from "./Home";
 import Login from "./Login";
+import Payment from "./Payment";
 import { useStateValue } from "./StateProvider";
+
+const promise = loadStripe("pk_test_51MBETiEoO1u2OXgF56vA9R8oa5gawIYbyeSzpAh5vlRZkpfhB5SjY2j3hBorOUADQ5lapilnGfcVdzY6CjzeJUah00gqdV59HI");
 
 function App() {
   // eslint-disable-next-line no-empty-pattern, no-unused-vars
@@ -58,7 +63,9 @@ function App() {
         <Route path="/payment" element={
           <div>
             <Header />
-            <h2>Im the payment page</h2>
+            <Elements stripe={promise}>
+              <Payment/>
+            </Elements>
           </div>
         }>
         </Route>

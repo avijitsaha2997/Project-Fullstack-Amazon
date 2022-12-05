@@ -52,6 +52,9 @@
   display: flex;
   justify-content: space-evenly;
 }
+.header__nav > a {
+  text-decoration: none;
+}
 .header__option {
   display: flex;
   flex-direction: column;

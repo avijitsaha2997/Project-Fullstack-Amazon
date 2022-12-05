@@ -15,15 +15,14 @@ function Subtotal() {
 
   return (
     <div className="subtotal">
-        <p>
-            <h4>Subtotal ({basket.length} items): <strong>${totalPriceWIthDecimal}</strong></h4>
 
-        </p>
+        <h4>Subtotal ({basket.length} items): <strong>${totalPriceWIthDecimal}</strong></h4>
+
         <small className="subtotal__gift">
           <input type="checkbox" /> This order contains a gift
         </small>
 
-        <button onClick={e => navigate("/payment")}>Proceed to checkout</button>
+        <button onClick={(e) => navigate("/payment")}>Proceed to checkout</button>
 
     </div>
   );
