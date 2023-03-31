@@ -2,12 +2,14 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "./axios";
+// import axios from "axios";
 import CheckoutProduct from "./CheckoutProduct";
 import "./Payment.css";
 import { getBasketTotal } from "./reducer";
 import { useStateValue } from "./StateProvider";
 
 function Payment() {
+  
   const navigate = useNavigate();
 
   // eslint-disable-next-line no-unused-vars
@@ -104,7 +106,7 @@ function Payment() {
                     <h3>Pyment Method</h3>
                 </div>
                 <div className="payment__details">
-                    <from onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit}>
                         <CardElement onChange={handleChange}/>
                          <div className="payment__priceContainer">
                             <h4>Order total: ${totalPriceWIthDecimal}</h4>
@@ -116,7 +118,7 @@ function Payment() {
                             </button>
                          </div>
                          {error && <div>{error}</div>}
-                    </from>
+                    </form>
                 </div>
             </div>
         </div>
